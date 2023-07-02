@@ -1,0 +1,90 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  font-family: "Arial", sans-serif;
+}
+
+#root {
+  flex-direction: column;
+  text-align: center;
+  background-color: #3d2121;
+  width: 50%;
+}
+
+h1 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+h1 > span {
+  font-size: 60px;
+}
+
+.container {
+  margin: auto;
+  padding: 3rem;
+  border-radius: 30px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-color: #4f2222;
+}
+
+input {
+  display: block;
+  width: 250px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 32px;
+  color: #a0a0a0;
+}
+
+button {
+  display: block;
+  color: #fff;
+  height: 40px;
+  width: 60px;
+  background-color: #8b0d0dcd;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #5f2e2e;
+}
+
+li > div {
+  display: flex;
+  align-items: center;
+}
+
+p {
+  color: whitesmoke;
+  font-size: 32px;
+  text-align: left;
+}
+
+li div button {
+  margin-left: 10px;
+}
