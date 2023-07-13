@@ -1,9 +1,46 @@
-<div id="app"></div>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue課題１</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body></body>
+</html>
 
-<script type="module">
+<body>
+  <div id="app">
+    <h1>{{message}}</h1>
+    <button @click="test">テスト</button>
+    <button @click="reset">リセット</button>
+    <input type="text" v-model="newText" />
+    <button @click="createTodo">登録</button>
+    <!-- <div>{{newText}}</div> -->
+    <ul>
+      <li v-for="todo in todos" :key="todo.id">
+        <input type="text" v-if="todo.isEditing" v-model="editText" />
+        <div v-else>{{todo.text}}</div>
+        <!-- <input v-if="todo.isEditing" value="this.editText" /> -->
+        <!-- <p v-else>{{ todo.text }}</p> -->
+        <!-- <button @click="updateTodo(todo)">更新</button> -->
+        <div v-if="todo.isEditing">
+          <button @click="updateTodo(todo)">更新</button>
+          <button @click="cancelTodo(todo)">取消</button>
+        </div>
+        <div v-else>
+          <button @click="editTodo(todo)">編集</button>
+          <button @click="deleteTodo(todo)">削除</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+
+<!-- <script type="module">
   import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
   import MyComponent from "./my-component.js";
   // import Todo from "./todo.js";
 
   createApp(MyComponent).mount("#app");
-</script>
+</script> -->
