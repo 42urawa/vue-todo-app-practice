@@ -4,12 +4,6 @@ const vueOption = {
     const todos = Vue.ref(JSON.parse(localStorage.getItem("todos")) || []);
     const newText = Vue.ref("");
     const editText = Vue.ref("");
-    const test = () => {
-      confirm(localStorage.getItem("todos"));
-    };
-    const reset = () => {
-      localStorage.removeItem("todos");
-    };
     const createTodo = () => {
       const id =
         todos.value.length === 0
@@ -45,8 +39,6 @@ const vueOption = {
     };
 
     return {
-      test,
-      reset,
       message,
       todos,
       newText,

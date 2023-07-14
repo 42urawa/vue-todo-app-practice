@@ -12,18 +12,12 @@
 <body>
   <div id="app">
     <h1>{{message}}</h1>
-    <button @click="test">テスト</button>
-    <button @click="reset">リセット</button>
     <input type="text" v-model="newText" />
     <button @click="createTodo">登録</button>
-    <!-- <div>{{newText}}</div> -->
     <ul>
       <li v-for="todo in todos" :key="todo.id">
         <input type="text" v-if="todo.isEditing" v-model="editText" />
         <div v-else>{{todo.text}}</div>
-        <!-- <input v-if="todo.isEditing" value="this.editText" /> -->
-        <!-- <p v-else>{{ todo.text }}</p> -->
-        <!-- <button @click="updateTodo(todo)">更新</button> -->
         <div v-if="todo.isEditing">
           <button @click="updateTodo(todo)">更新</button>
           <button @click="cancelTodo(todo)">取消</button>
@@ -36,11 +30,3 @@
     </ul>
   </div>
 </body>
-
-<!-- <script type="module">
-  import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-  import MyComponent from "./my-component.js";
-  // import Todo from "./todo.js";
-
-  createApp(MyComponent).mount("#app");
-</script> -->
